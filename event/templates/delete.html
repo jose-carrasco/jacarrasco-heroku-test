@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Eliminar evento</h1>
+
+<form method="POST">
+
+{% csrf_token %}
+
+<div class="form-group">
+	<label>¿Desea eliminar?</label>
+	<span>{{ event.name }}</span>
+</div>
+
+<div class="form-group">	
+	<button type="submit" class="btn btn-danger">Confirmar</button>
+</div>
+
+</form>
+
+{% endblock %}

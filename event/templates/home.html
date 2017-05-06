@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Listado de eventos</h1>
+
+{% if events %}
+    <ul class='list-group'>
+	{% for event in events.all %}
+	<li class='list-group-item'>{{event.name}} <a href="/event/details/{{ event.id }}" class="btn btn-primary">Ver detalles</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<h3> No hay eventos que mostrar. </h3>
+{% endif %}
+
+{% endblock %}

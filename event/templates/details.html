@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Detalle de evento</h1>
+
+<div class="form-group">
+	<label>Nombre:</label>
+	<span>{{ event.name }}</span>
+</div>
+
+<div class="form-group">
+	<label>Categoría:</label>
+	<span>{{ event.category }}</span>
+</div>
+
+<div class="form-group">
+	<label>Tipo de evento:</label>
+	<span>{{ event.type }}</span>
+</div>
+
+<div class="form-group">
+	<label>Place:</label>
+	<span>{{ event.place }}</span>
+</div>
+
+<div class="form-group">
+	<label>Dirección:</label>
+	<span>{{ event.address }}</span>
+</div>
+
+<div class="form-group">
+	<label>Fecha de inicio:</label>
+	<span>{{ event.start_date }}</span>
+</div>
+
+<div class="form-group">
+	<label>Fecha de término:</label>
+	<span>{{ event.end_date }}</span>
+</div>
+
+
+
+<div class="form-group">
+	<a href="/event/edit/{{event.id}}" class="btn btn-primary">Editar</a>
+</div>
+
+<div class="form-group">
+	<a href="/event/delete/{{event.id}}" class="btn btn-danger">Eliminar</a>
+</div>
+
+</form>
+
+{% endblock %}
