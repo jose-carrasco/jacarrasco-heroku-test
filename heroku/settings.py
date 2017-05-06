@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '$0i071(+h$k%0x^)(+-&7cr(1riii4z3n(p2estb3^&ld5za99'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG =  False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -119,4 +119,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+MEDIA_ROOT = BASE_DIR + '/media/'
+MEDIA_URL = '/media/'
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
